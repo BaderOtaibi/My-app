@@ -1,7 +1,7 @@
 # tinder-prototype 
-###prerequisites: 
+### prerequisites: 
 download nodejs and mongodb on your pc
-##Steps:
+## Steps:
 To run the app follow these steps:
 1- download code files
 2- open code folder using VS code
