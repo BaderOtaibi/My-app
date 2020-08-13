@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tinder</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="assets/css/tinderesque.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/cuter.css">
+</head>
+
+<body>
+    <header>
+        <h1>Profiles</h1>
+    </header>
+    <section>
+        <div class="cardcontainer list">            
+            <ul class="cardlist">
+                <% for(var i = 0; i < profiles.length; i++) {%>
+                    <li class="card <%- i==0?'current':'' %>">
+                        <img src="uploads/<%- profiles[i].fname %>.jpg" alt="<%- profiles[i].fname %>" width="100%" height="100%"/>
+                        <input name="fnamee" type="hidden" class="extrainfo" value="<%- profiles[i].fname %>"/>
+                        <span class="hoverinfo"><%- profiles[i].fname %></span>
+                    </li>
+                  <% } %>             
+                
+            </ul>
+            <button class="but-nope" title="Dislike">X</button>
+            <button id="yaBtn" class="but-yay" title="Like">✔</button>
+            <span id="counter"><%= profiles.length%></span>
+            
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>Tinder Prototype <a href="/matches">Matched Profiles</a> - <a href="/logout">Logout</a> </p>
+    </footer>
+    <!-- <script src="assets/js/jquery.min.js"></script> -->
+    <script src="assets/js/tinderesque.js"></script>
+    <script src="assets/js/cuter.js"></script>
+    <script>
+        window.addEventListener('load', function(ev) {
+            var yaBtn = document.querySelector('#yaBtn');            
+            yaBtn.addEventListener("click", function() {
+                var fname1 = document.getElementsByName("fnamee")[0].value                   
+                fetch('/send-mail', {
+                    method: 'post',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({fnamee: fname1 })
+                })                              
+            });//btn listener
+        
+    });
+    </script>
+</body>
+
+</html>
