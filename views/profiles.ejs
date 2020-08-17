@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="assets/css/tinderesque.css">
     <link rel="stylesheet" type="text/css" href="assets/css/cuter.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+   
 </head>
 
 <body>
@@ -25,8 +27,8 @@
                   <% } %>             
                 
             </ul>
-            <button class="but-nope" title="Dislike">X</button>
-            <button id="yaBtn" class="but-yay" title="Like">✔</button>
+            <button class="but-nope" title="Dislike"><span  class="fa fa-thumbs-o-down" aria-hidden="true"></span></button>
+            <button id="yaBtn" class="but-yay" title="Like"><span class="fa fa-thumbs-o-up " aria-hidden="true"></span></button>
             <span id="counter"><%= profiles.length%></span>
             
         </div>
